@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Referrals</title>
+  <title>Invest</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -207,7 +207,7 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="invest.html">
+        <a class="nav-link " href="invest.html">
           <i class="bi bi-currency-dollar"></i>
           <span>Invest</span>
         </a>
@@ -242,7 +242,7 @@
 
 
       <li class="nav-item">
-        <a class="nav-link " href="referrals.html">
+        <a class="nav-link collapsed" href="referrals.html">
           <i class="bi bi-card-list"></i>
           <span>Referrals</span>
         </a>
@@ -258,11 +258,11 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Referrals</h1>
+      <h1>Invest</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Referrals</li>
+          <li class="breadcrumb-item active">Invest</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -270,65 +270,130 @@
     <section class="section">
       <div class="row">
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Referrals</h5>
-              <p>Enter The Following Information To Generate A <code>Refferal Code</code> For You To Receive a $5 Credit Every Time Someone Joins Creator Capital Using Your Code and Deposits At Least $5.</p>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Search</h5>
 
-              <!-- Browser Default Validation -->
-                <div class="container">
-                  <form class="row g-3" action="referral.php" method="post">
-                    <div class="col-md-4">
-                      <label for="validationDefault01" class="form-label">First name</label>
-                      <input type="text" class="form-control" id="validationDefault01" value="" required>
-                    </div>
-                    <div class="col-md-4">
-                      <label for="validationDefault02" class="form-label">Last name</label>
-                      <input type="text" class="form-control" id="validationDefault02" value="" required>
-                    </div>
-                    <div class="col-md-4">
-                      <label for="validationDefaultUsername" class="form-label">Code</label>
-                      <div class="input-group">
-                        <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                        <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                        <label class="form-check-label" for="invalidCheck2">
-                          Agree to terms and conditions
-                        </label>
-                      </div>
-                      <input type="hidden" name="referralCode" id="referral-code-input" value="">
-                      <div class="col-12">
-                        <button class="btn btn-primary" id="submit-form-btn" type="submit">Submit form</button>
-                      </div>
-                    </form>
-                    
-                    <script>
-                      const form = document.querySelector('form');
-                      const submitBtn = document.getElementById('submit-form-btn');
-                      const referralCodeInput = document.getElementById('referral-code-input');
-                    
-                      submitBtn.addEventListener('click', (event) => {
-                        event.preventDefault(); // prevent default form submission behavior
-                        const referralCode = document.getElementById('validationDefaultUsername').value;
-                        referralCodeInput.value = referralCode; // set referral code input value
-                        // save referral code in a cookie or local storage for later use
-                        // redirect to the referral page with referral code in the URL
-                        window.location.href = 'referral.php?referralCode=' + encodeURIComponent(referralCode);
-                      });
-                    </script>
-              <!-- End Browser Default Validation -->
-
+            <!-- General Form Elements -->
+            <form>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Search</label>
+              </div>
             
-    </section>
+              <div class="row mb-3">
+                <div class="col-sm-10">
+                  <select class="form-select" aria-label="Default select example" id="creatorList">
+                    <option selected>Choose a Creator</option>
+                    <option value="pewdiepie.html">PewDiePie</option>
+                    <option value="mr_beast.html">Mr. Beast</option>
+                    <option value="logan_paul.html">Logan Paul</option>
+                    <option value="charli.html">Charli Damelio</option>
+                    <option value="the_rock.html">Dwayne "The Rock" Johnson</option>
+                  </select>
+                </div>
+              </div>
+            
+              <div class="row mb-3">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary" onclick="redirect(); return false;">Search</button>
+                </div>
+              </div>
+            </form>
+            
+            <script>
+            function redirect() {
+              var creatorList = document.getElementById("creatorList");
+              var selectedValue = creatorList.options[creatorList.selectedIndex].value;
+              if (selectedValue != "") {
+                window.location.href = selectedValue;
+              }
+            }
+            </script>
+              <section class="section dashboard">
+                <div class="row">
+                  <!-- Top Stocks -->
+                  <div class="col-12">
+                    <div class="card top-selling overflow-auto">
+
+                      <div class="filter">
+                        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                          <li class="dropdown-header text-start">
+                            <h6>Filter</h6>
+                          </li>
+
+                          <li><a class="dropdown-item" href="#">Today</a></li>
+                          <li><a class="dropdown-item" href="#">This Month</a></li>
+                          <li><a class="dropdown-item" href="#">This Year</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="card-body pb-0">
+                        <h5 class="card-title">Top Creators <span>| Today</span></h5>
+
+                        <table class="table table-borderless">
+                          <thead>
+                            <tr>
+                              <th scope="col">Preview</th>
+                              <th scope="col">Creator</th>
+                              <th scope="col">Price</th>
+                              <th scope="col">Active Projects</th>
+                              <th scope="col">Creator Ticker</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row"><a href="mr_beast.html"><img src="assets/img/beast.png" alt=""></a></th>
+                              <td><a href="mr_beast.html" class="text-primary fw-bold">Mr.Beast</a></td>
+                              <td>$10.00</td>
+                              <td class="fw-bold">12</td>
+                              <td>MBPC</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="charli.html"><img src="assets/img/damelio.png" alt=""></a></th>
+                              <td><a href="charli.html" class="text-primary fw-bold">Charli Damelio</a></td>
+                              <td>$9.60</td>
+                              <td class="fw-bold">28</td>
+                              <td>CDC</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="justin_bieber.html"><img src="assets/img/bieber.png" alt=""></a>
+                              </th>
+                              <td><a href="justin_bieber.html" class="text-primary fw-bold">Justin Bieber</a></td>
+                              <td>$9.29</td>
+                              <td class="fw-bold">2</td>
+                              <td>JBM</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="logan_paul.html"><img src="assets/img/paul.png" alt=""></a></th>
+                              <td><a href="logan_paul.html" class="text-primary fw-bold">Logan Paul</a></td>
+                              <td>$9.19</td>
+                              <td class="fw-bold">18</td>
+                              <td>LPLLC</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="the_rock.html"><img src="assets/img/rock.png" alt=""></a></th>
+                              <td><a href="the_rock.html" class="text-primary fw-bold">Dwayne "The Rock" Johnson</a>
+                              </td>
+                              <td>$9.07</td>
+                              <td class="fw-bold">5</td>
+                              <td>ROCK</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div>
+
+                    </div>
+                  </div><!-- End Top Selling -->
+
+
 
   </main><!-- End #main -->
 
-   <!-- ======= Footer ======= -->
-   <footer id="footer" class="footer">
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
     <div class="copyright">
       &copy; Copyright <strong><span>Creator Capital</span></strong>. All Rights Reserved
     </div>

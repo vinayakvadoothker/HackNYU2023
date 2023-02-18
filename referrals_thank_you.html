@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Referrals</title>
+  <title>Thank You</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -258,11 +258,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Referrals</h1>
+      <h1>Thank You</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Referrals</li>
+          <li class="breadcrumb-item"><a href="referrals.html">Referrals</a></li>
+          <li class="breadcrumb-item active">Thank You</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -270,65 +271,26 @@
     <section class="section">
       <div class="row">
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Referrals</h5>
-              <p>Enter The Following Information To Generate A <code>Refferal Code</code> For You To Receive a $5 Credit Every Time Someone Joins Creator Capital Using Your Code and Deposits At Least $5.</p>
+        <?php
+        $referralCode = $_GET['referralCode'] ?? null;
+      ?>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Referrals</h5>
+          <p>Thank You For Choosing To Refer Us</p>
+          <?php if ($referralCode) : ?>
+            <p>Use The Following Referral Code: <code><?php echo $referralCode; ?></code></p>
+          <?php endif; ?>
+          <p><code>PUT REFERRAL CODE HERE</code></p>
+        </div>
+      </div>
 
-              <!-- Browser Default Validation -->
-                <div class="container">
-                  <form class="row g-3" action="referral.php" method="post">
-                    <div class="col-md-4">
-                      <label for="validationDefault01" class="form-label">First name</label>
-                      <input type="text" class="form-control" id="validationDefault01" value="" required>
-                    </div>
-                    <div class="col-md-4">
-                      <label for="validationDefault02" class="form-label">Last name</label>
-                      <input type="text" class="form-control" id="validationDefault02" value="" required>
-                    </div>
-                    <div class="col-md-4">
-                      <label for="validationDefaultUsername" class="form-label">Code</label>
-                      <div class="input-group">
-                        <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                        <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                        <label class="form-check-label" for="invalidCheck2">
-                          Agree to terms and conditions
-                        </label>
-                      </div>
-                      <input type="hidden" name="referralCode" id="referral-code-input" value="">
-                      <div class="col-12">
-                        <button class="btn btn-primary" id="submit-form-btn" type="submit">Submit form</button>
-                      </div>
-                    </form>
-                    
-                    <script>
-                      const form = document.querySelector('form');
-                      const submitBtn = document.getElementById('submit-form-btn');
-                      const referralCodeInput = document.getElementById('referral-code-input');
-                    
-                      submitBtn.addEventListener('click', (event) => {
-                        event.preventDefault(); // prevent default form submission behavior
-                        const referralCode = document.getElementById('validationDefaultUsername').value;
-                        referralCodeInput.value = referralCode; // set referral code input value
-                        // save referral code in a cookie or local storage for later use
-                        // redirect to the referral page with referral code in the URL
-                        window.location.href = 'referral.php?referralCode=' + encodeURIComponent(referralCode);
-                      });
-                    </script>
-              <!-- End Browser Default Validation -->
-
-            
     </section>
 
   </main><!-- End #main -->
 
-   <!-- ======= Footer ======= -->
-   <footer id="footer" class="footer">
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
     <div class="copyright">
       &copy; Copyright <strong><span>Creator Capital</span></strong>. All Rights Reserved
     </div>

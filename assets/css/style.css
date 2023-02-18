@@ -1,3 +1,6 @@
+.deposit-money {
+  margin-right: 10px; /* adjust the value as needed */
+}
 
 :root {
   scroll-behavior: smooth;
