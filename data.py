@@ -5,6 +5,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import requests
 from datetime import datetime
+import matplotlib
+matplotlib.use('Agg')
 
 def get_subscriber_count(q):
     channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
