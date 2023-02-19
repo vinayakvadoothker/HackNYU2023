@@ -127,12 +127,19 @@ df_sorted
 
 df_sorted['view_count'] = (df_sorted['view_count'] / 10000000)
 
-plot=sns.lineplot(x='published',y='view_count',data=df_sorted,ci=None).set(title='Views per month in 2022',xlabel = 'Months in 2022',ylabel='Number of Views(in 10 Millions)')
 
 
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
+plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
+#plt.show()
 
 
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
+plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
 
+# Save the plot as an image
+filename = "assets/img/charli_data.png"
+plt.savefig(filename, dpi=300, bbox_inches='tight')
 
 
 

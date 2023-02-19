@@ -1,43 +1,26 @@
-from flask import Flask, render_template, request, redirect
-import os
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return render_template("home.html")
+@app.route('/phone-number', methods=['GET', 'POST'])
+def phone_number():
+    if request.method == "GET":
+        return render_template('pages-login.html')
+    else:
+        phone_number = request.form['phone-number']
+        with open('phone_numbers.txt', 'a') as f:
+            f.write(phone_number + '\n')
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
-    if request.method == "POST":
-        name = request.form["name"]
-        email = request.form["email"]
-        username = request.form["username"]
-        password = request.form["password"]
+    return redirect('home.html')
 
-        with open("users.txt", "a") as file:
-            file.write(f"{name},{email},{username},{password}\n")
+@app.route('/submit_trade', methods=['POST'])
+def submit_trade():
+    stock_price = request.form['stock_price']
+    with open('trades.txt', 'a') as f:
+        f.write(f'Stock price: {stock_price}\n')
+    return 'Trade submitted successfully!'
 
-        return redirect("/login")
+    return redirect('home.html')
 
-    return render_template("pages-register.html")
-
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
-
-        with open("users.txt", "r") as file:
-            for line in file:
-                user_info = line.strip().split(",")
-                if user_info[2] == username and user_info[3] == password:
-                    return redirect("/profile")
-
-        return render_template("pages-login.html", error="Invalid username or password")
-
-    return render_template("pages-login.html")
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run()

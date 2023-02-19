@@ -3,11 +3,11 @@ from flask import Flask, render_template, request, redirect, url_for, session
 app = Flask(__name__)
 app.secret_key = 'secret_key'
 
-@app.route('/')
+@app2.route('/')
 def home():
     return render_template('pages-login.html')
 
-@app.route('/login', methods=['POST'])
+@app2.route('/login', methods=['POST'])
 def login():
     # get user input from the form
     username = request.form['username']
@@ -27,7 +27,7 @@ def login():
     error = 'Invalid username or password'
     return render_template('pages-login.html', error=error)
 
-@app.route('/dashboard')
+@app2.route('/dashboard')
 def dashboard():
     # check if the user is logged in by checking the session
     if 'username' in session:
@@ -37,7 +37,7 @@ def dashboard():
         # if the user is not logged in, redirect to the login page
         return redirect(url_for('home'))
 
-@app.route('/logout')
+@app2.route('/logout')
 def logout():
     # remove the session and redirect to the login page
     session.pop('username', None)
