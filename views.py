@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request
 from texting import introText
-#from data import get_url
+from data import getAll, getURL
 
 views = Blueprint(__name__, 'views')
 
@@ -20,17 +20,21 @@ def home():
     
 
 
-@views.route('/invest.html', methods=['GET', 'POST'])
-def home2():
-    if request.method == 'POST': # needs to be added in template not invest
-            number = request.form['searchInput']
-            name = searchInput
-            url = get_url(searchInput)
-            twitter_name = searchInput.replace(' ', '')
-            ticker = searchInput[:4]
-            return render_template('template.html',name = name, url = url, twitter_name = twitter_name, ticker = ticker) 
-    else:
-            return render_template('invest.html')
+@views.route('/invest.html')
+def invest():
+    return render_template('invest.html')
+    
+@views.route('/template.html', methods=['GET', 'POST'])
+def template():
+    if request.method == 'POST':
+            name = request.form['searchInput']
+            #url = get_url(searchInput)
+            url = getURL(name)
+            getAll(name)
+            twitter_name = name.replace(' ', '')
+            ticker = twitter_name[:4]
+
+    return render_template('template.html',name, url, twitter_name, ticker)
 
 @views.route('/about_us.html')
 def about():
