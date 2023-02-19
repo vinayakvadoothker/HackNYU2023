@@ -27,14 +27,14 @@ def invest():
 @views.route('/template.html', methods=['GET', 'POST'])
 def template():
     if request.method == 'POST':
-            name = request.form['searchInput']
+            namee = request.form['searchInput']
             #url = get_url(searchInput)
-            url = get_url(name)
-            count = get_subscriber_count(name)
-            getAll(name)
-            twitter_name = name.replace(' ', '')
+            url = get_url(namee)
+            count = get_subscriber_count(namee)
+            getAll(namee)
+            twitter_name = namee.replace(' ', '')
             ticker = twitter_name[:4]
-            return render_template("template.html", name=name, url=url, twitter_name=twitter_name, ticker=ticker, count=count)
+            return render_template("template.html", namee=namee, url=url, twitter_name=twitter_name, ticker=ticker, count=count)
     else:
         return render_template('template.html')
 
