@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>About Us</title>
+  <title>Deposit Page</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/logo.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../static/img/logo.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -20,19 +20,16 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../static/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-
-
+  <link href="../static/css/style.css" rel="stylesheet">
 
 
 </head>
@@ -44,7 +41,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="home.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
+        <img src="../static/img/logo.png" alt="">
         <span class="d-none d-lg-block">Creator Capital</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -58,9 +55,7 @@
             <i class="bi bi-search"></i>
           </a>
         </li><!-- End Search Icon-->
-        <div class="deposit-money" style="margin-right: 10px;">
-          <a href="deposit.html" class="btn btn-primary">Deposit Money</a>
-        </div>
+
         <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -146,7 +141,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="../static/img/profile-img.jpg" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">J. Smith</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -205,7 +200,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="home.html">
+        <a class="nav-link " href="home.html">
           <i class="bi bi-grid"></i>
           <span>Portfolio</span>
         </a>
@@ -219,7 +214,7 @@
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="about_us.html">
+        <a class="nav-link collapsed" href="about_us.html">
           <i class="bi bi-people"></i>
           <span>About Us</span>
         </a>
@@ -263,102 +258,101 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>About Us</h1>
+      <h1>Deposit</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="home.html">Home</a></li>
-          <li class="breadcrumb-item active">About Us</li>
+          <li class="breadcrumb-item active">Deposit</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
-    <section class="section">
-      <div class="row">
-
+    <div class="container">
+      <h1>Deposit Money</h1>
+    
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"></h5>
-              <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-                <div class="container">
-                  <div class="row justify-content-center">
-              <a href="home.html" class="logo d-flex align-items-center w-auto" style="margin-top: -150px;">
-                <span class="d-none d-lg-block" style="font-size: 48px; font-weight: bold;">Meet Our Team</span>
-              </a><!-- End Logo -->
-              <section class="section about-us py-5">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-4">
-                      <div class="card border-0">
-                        <img src="assets/img/Ishaan.jpeg" class="card-img-top" alt="">
-                        <div class="card-body text-center">
-                          <h4 class="card-title">Ishaan Bansal</h4>
-                          <p class="card-text">Ishaan is a First-Year Student at UCSC studying Computer Science</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                      <div class="card border-0">
-                        <img src="assets/img/vin.jpeg" class="card-img-top" alt="">
-                        <div class="card-body text-center">
-                          <h4 class="card-title">Vin Vadoothker</h4>
-                          <p class="card-text"> Vin is a First-Year Student at UCSC studying Computer Engineering.
-  
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                      <div class="card border-0">
-                        <img src="assets/img/saumit.jpeg" class="card-img-top" alt="">
-                        <div class="card-body text-center">
-                          <h4 class="card-title">Saumit Vedula</h4>
-                          <p class="card-text">Saumit is a First-Year Student at UCSC studying Computer Science</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                      <div class="card border-0">
-                        <img src="assets/img/ashwin.jpeg" class="card-img-top" alt="">
-                        <div class="card-body text-center">
-                          <h4 class="card-title">Ashwin Marichetty</h4>
-                          <p class="card-text">Ashwin is a First-Year Student at UCSC studying Computer Science</p>
-                        </div>
-                      </div>
-                    </div>
+              <h5 class="card-title">Credit Card</h5>
+              <form>
+                <div class="mb-3">
+                  <label for="cc-number" class="form-label">Card Number</label>
+                  <input type="text" class="form-control" id="cc-number">
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="cc-expiration" class="form-label">Expiration</label>
+                    <input type="text" class="form-control" id="cc-expiration">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="cc-cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cc-cvv">
                   </div>
                 </div>
-              </section>
-
- 
-
+                <div class="mb-3">
+                  <label for="cc-name" class="form-label">Name on card</label>
+                  <input type="text" class="form-control" id="cc-name">
+                </div>
+                <div class="mb-3">
+                  <label for="cc-amount" class="form-label">Amount</label>
+                  <input type="number" class="form-control" id="cc-amount" min="0">
+                </div>
+                <button type="submit" class="btn btn-primary">Deposit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">PayPal/Venmo</h5>
+              <form>
+                <div class="mb-3">
+                  <label for="pp-email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="pp-email">
+                </div>
+                <div class="mb-3">
+                  <label for="pp-password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="pp-password">
+                </div>
+                <div class="mb-3">
+                  <label for="pp-amount" class="form-label">Amount</label>
+                  <input type="number" class="form-control" id="pp-amount" min="0">
+                </div>
+                <button type="submit" class="btn btn-primary">Deposit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    
   </main><!-- End #main -->
-</main><!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
-  <div class="copyright">
-    &copy; Copyright <strong><span>Creator Capital</span></strong>. All Rights Reserved
-  </div>
-  <div class="credits">
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Creator Capital</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
 
-  </div>
-</footer><!-- End Footer -->
+    </div>
+  </footer><!-- End Footer -->
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-    class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-<!-- Vendor JS Files -->
-<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/chart.js/chart.umd.js"></script>
-<script src="assets/vendor/echarts/echarts.min.js"></script>
-<script src="assets/vendor/quill/quill.min.js"></script>
-<script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-<script src="assets/vendor/tinymce/tinymce.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/chart.js/chart.umd.js"></script>
+  <script src="../static/vendor/echarts/echarts.min.js"></script>
+  <script src="../static/vendor/quill/quill.min.js"></script>
+  <script src="../static/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../static/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
 
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+  <!-- Template Main JS File -->
+  <script src="../static/js/main.js"></script>
 
 </body>
 

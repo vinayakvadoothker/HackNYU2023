@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Invest</title>
+  <title>PewDiePie</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/logo.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../static/img/logo.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -20,19 +20,20 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../static/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="../static/css/style.css" rel="stylesheet">
 
 
 </head>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <body>
 
@@ -41,7 +42,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="home.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
+        <img src="../static/img/logo.png" alt="">
         <span class="d-none d-lg-block">Creator Capital</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -143,7 +144,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="../static/img/profile-img.jpg" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">J. Smith</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -209,7 +210,7 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="invest.html">
+        <a class="nav-link collapsed" href="invest.html">
           <i class="bi bi-currency-dollar"></i>
           <span>Invest</span>
         </a>
@@ -260,152 +261,102 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Invest</h1>
+      <h1>PewDiePie</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="home.html">Home</a></li>
-          <li class="breadcrumb-item active">Invest</li>
+          <li class="breadcrumb-item"><a href="invest.html">Invest</a></li>
+          <li class="breadcrumb-item active">PewDiePie</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
     <section class="section">
       <div class="row">
+        <div class="col-md-6">
+          <a href="pewdiepie.html"><img src="../static/img/die2.png" alt="" width="350"></a>
+          <br><br>
+          <div style="position: relative;">
+            <div style="text-align:center;">
+              <img src="../static/img/pewdiepie_data.png" alt="" style="max-width: 100%; margin-bottom: 20px;">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEgt25yYidY" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title" style="font-size: 24px;">LPLLC <span style="font-size: 24px;">| $9.22</span></h5>
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control" id="stock-price" step="0.01" name="stock_price">
+                <button class="btn btn-primary" id="submit-trade" type="button">Submit Trade</button>
+              </div>
+              <h5 class="card-title" style="font-size: 16px;">Stock Price ($) <span style="font-size: 24px;"></span>
+              </h5>
+              <div id="reportsChartSmall"></div>
+              <div class="buy-sell-hold" style="margin-top: 20px;">
+                <div class="buy-bar" style="width: 40%;">Buy (40%)</div>
+                <div class="hold-bar" style="width: 30%;">Hold (30%)</div>
+                <div class="sell-bar" style="width: 30%;">Sell (30%)</div>
+              </div>
+              <br>
+              <a class="twitter-timeline" data-theme="light" data-tweet-limit="3"
+                href="https://twitter.com/pewdiepie">Tweets by Logan Paul</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+          </div>
+        </div>
+    </section>
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Search</h5>
-
-            <!-- General Form Elements -->
-            <form>
-              <div class="form-floating mb-3">
-                <input type="search" class="form-control" id="searchInput" placeholder="Enter a search term">
-                <label for="searchInput">Search</label>
-              </div>
-            
-              <div class="row mb-3">
-                <div class="col-sm-10">
-                  <select class="form-select" aria-label="Default select example" id="creatorList">
-                    <option selected>Choose a Creator</option>
-                    <option value="pewdiepie.html">PewDiePie</option>
-                    <option value="mr_beast.html">Mr. Beast</option>
-                    <option value="logan_paul.html">Logan Paul</option>
-                    <option value="charli.html">Charli Damelio</option>
-                    <option value="the_rock.html">Dwayne "The Rock" Johnson</option>
-                  </select>
-                </div>
-              </div>
-            
-              <div class="row mb-3">
-                <div class="col-sm-10">
-                  <button type="submit" class="btn btn-primary" onclick="search(); return false;">Search</button>
-                </div>
-              </div>
-            </form>
-            
-            <script>
-              function search() {
-                const searchInput = document.getElementById('searchInput').value.trim();
-                const creatorList = document.getElementById('creatorList');
-                const selectedCreator = creatorList.options[creatorList.selectedIndex].value;
-            
-                if (searchInput === '' && selectedCreator !== 'Choose a Creator') {
-                  window.location.href = selectedCreator;
-                } else if (searchInput !== '') {
-                  // Redirect to search results page based on searchInput
-                  window.location.href = 'search.html?q=' + encodeURIComponent(searchInput);
-                } else {
-                  // Do nothing if both search input and dropdown selection are empty
-                }
-              }
-            </script>
-            
-            <script>
-            function redirect() {
-              var creatorList = document.getElementById("creatorList");
-              var selectedValue = creatorList.options[creatorList.selectedhome].value;
-              if (selectedValue != "") {
-                window.location.href = selectedValue;
-              }
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new ApexCharts(document.querySelector("#reportsChartSmall"), {
+          series: [{
+            name: 'Stock Price ($)',
+            data: [9.00, 9.10, 9.20, 9.30, 9.20, 9.18, 9.22],
+          }],
+          chart: {
+            height: 150,
+            type: 'area',
+            toolbar: {
+              show: false
+            },
+          },
+          markers: {
+            size: 3
+          },
+          colors: ['#4154f1'],
+          fill: {
+            type: "gradient",
+            gradient: {
+              shadeIntensity: 1,
+              opacityFrom: 0.3,
+              opacityTo: 0.4,
+              stops: [0, 90, 100]
             }
-            </script>
-              <section class="section dashboard">
-                <div class="row">
-                  <!-- Top Stocks -->
-                  <div class="col-12">
-                    <div class="card top-selling overflow-auto">
-
-                      <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                          <li class="dropdown-header text-start">
-                            <h6>Filter</h6>
-                          </li>
-
-                          <li><a class="dropdown-item" href="#">Today</a></li>
-                          <li><a class="dropdown-item" href="#">This Month</a></li>
-                          <li><a class="dropdown-item" href="#">This Year</a></li>
-                        </ul>
-                      </div>
-
-                      <div class="card-body pb-0">
-                        <h5 class="card-title">Top Creators <span>| Today</span></h5>
-
-                        <table class="table table-borderless">
-                          <thead>
-                            <tr>
-                              <th scope="col">Preview</th>
-                              <th scope="col">Creator</th>
-                              <th scope="col">Price</th>
-                              <th scope="col">Active Projects</th>
-                              <th scope="col">Creator Ticker</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row"><a href="mr_beast.html"><img src="assets/img/beast.png" alt=""></a></th>
-                              <td><a href="mr_beast.html" class="text-primary fw-bold">Mr.Beast</a></td>
-                              <td>$10.00</td>
-                              <td class="fw-bold">12</td>
-                              <td>MBPC</td>
-                            </tr>
-                            <tr>
-                              <th scope="row"><a href="charli.html"><img src="assets/img/damelio.png" alt=""></a></th>
-                              <td><a href="charli.html" class="text-primary fw-bold">Charli Damelio</a></td>
-                              <td>$9.60</td>
-                              <td class="fw-bold">28</td>
-                              <td>CDC</td>
-                            </tr>
-                            <tr>
-                              <th scope="row"><a href="justin_bieber.html"><img src="assets/img/bieber.png" alt=""></a>
-                              </th>
-                              <td><a href="justin_bieber.html" class="text-primary fw-bold">Justin Bieber</a></td>
-                              <td>$9.29</td>
-                              <td class="fw-bold">2</td>
-                              <td>JBM</td>
-                            </tr>
-                            <tr>
-                              <th scope="row"><a href="logan_paul.html"><img src="assets/img/paul.png" alt=""></a></th>
-                              <td><a href="logan_paul.html" class="text-primary fw-bold">Logan Paul</a></td>
-                              <td>$9.19</td>
-                              <td class="fw-bold">18</td>
-                              <td>LPLLC</td>
-                            </tr>
-                            <tr>
-                              <th scope="row"><a href="the_rock.html"><img src="assets/img/rock.png" alt=""></a></th>
-                              <td><a href="the_rock.html" class="text-primary fw-bold">Dwayne "The Rock" Johnson</a>
-                              </td>
-                              <td>$9.07</td>
-                              <td class="fw-bold">5</td>
-                              <td>ROCK</td>
-                            </tr>
-                          </tbody>
-                        </table>
-
-                      </div>
-
-                    </div>
-                  </div><!-- End Top Selling -->
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            curve: 'smooth',
+            width: 1
+          },
+          xaxis: {
+            type: 'datetime',
+            categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"],
+            labels: {
+              show: false
+            }
+          },
+          tooltip: {
+            x: {
+              format: 'dd/MM/yy HH:mm'
+            },
+          }
+        }).render();
+      });
+    </script>
 
 
 
@@ -425,17 +376,17 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/chart.js/chart.umd.js"></script>
+  <script src="../static/vendor/echarts/echarts.min.js"></script>
+  <script src="../static/vendor/quill/quill.min.js"></script>
+  <script src="../static/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../static/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../static/js/main.js"></script>
 
 </body>
 

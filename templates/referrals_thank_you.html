@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Charli Damelio</title>
+  <title>Thank You</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/logo.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../static/img/logo.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -20,20 +20,19 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../static/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="../static/css/style.css" rel="stylesheet">
 
 
 </head>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <body>
 
@@ -42,7 +41,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="home.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
+        <img src="../static/img/logo.png" alt="">
         <span class="d-none d-lg-block">Creator Capital</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -56,9 +55,7 @@
             <i class="bi bi-search"></i>
           </a>
         </li><!-- End Search Icon-->
-        <div class="deposit-money" style="margin-right: 10px;">
-          <a href="deposit.html" class="btn btn-primary">Deposit Money</a>
-        </div>
+
         <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -92,7 +89,7 @@
             <li class="notification-item">
               <i class="bi bi-x-circle text-danger"></i>
               <div>
-                <h4>Order Declined - Mr. Beast</h4>
+                <h4>Order Declined - Mr. Beast Production Company</h4>
                 <p>Your order to buy $40.00 of MBPC has been DECLINED due to insufficient funds in your account.</p>
                 <p>1 hr. ago</p>
               </div>
@@ -144,7 +141,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="../static/img/profile-img.jpg" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">J. Smith</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -245,7 +242,7 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="referrals.html">
+        <a class="nav-link " href="referrals.html">
           <i class="bi bi-card-list"></i>
           <span>Referrals</span>
         </a>
@@ -261,102 +258,34 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Charli Damelio</h1>
+      <h1>Thank You</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="invest.html">Invest</a></li>
-          <li class="breadcrumb-item active">Charli Damelio</li>
+          <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="referrals.html">Referrals</a></li>
+          <li class="breadcrumb-item active">Thank You</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+
     <section class="section">
       <div class="row">
-        <div class="col-md-6">
-          <a href="charli.html"><img src="assets/img/charli2.png" alt="" width="560"></a>
-          <br><br>
-          <div style="position: relative;">
-            <img src="assets/img/charli_data.png" alt="" style="max-width: 100%; margin-bottom: 20px;">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/0g5wPyghzcM" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
+
+        <?php
+        $referralCode = $_GET['referralCode'] ?? null;
+      ?>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Referrals</h5>
+          <p>Thank You For Choosing To Refer Us</p>
+          <?php if ($referralCode) : ?>
+            <p>Use The Following Referral Code: <code><?php echo $referralCode; ?></code></p>
+          <?php endif; ?>
+          <p><code>PUT REFERRAL CODE HERE</code></p>
         </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h5 class="card-title" style="font-size: 24px;">CDC <span style="font-size: 24px;">| $9.60</span></h5>
-              <div class="input-group mb-3">
-                <span class="input-group-text">$</span>
-                <input type="number" class="form-control" id="stock-price" step="0.01" name="stock_price">
-                <button class="btn btn-primary" id="submit-trade" type="button">Submit Trade</button>
-              </div>
-              <h5 class="card-title" style="font-size: 16px;">Stock Price ($) <span style="font-size: 24px;"></span>
-              </h5>
-              <div id="reportsChartSmall"></div>
-              <div class="buy-sell-hold" style="margin-top: 20px;">
-                <div class="buy-bar" style="width: 50%;">Buy (50%)</div>
-                <div class="hold-bar" style="width: 35%;">Hold (35%)</div>
-                <div class="sell-bar" style="width: 20%;">Sell (15%)</div>
-              </div>
-              <br>
-              <a class="twitter-timeline" data-theme="light" data-tweet-limit="3"
-                href="https://twitter.com/charlidamelio">Tweets by Charli Damelio</a>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-          </div>
-        </div>
+      </div>
+
     </section>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        new ApexCharts(document.querySelector("#reportsChartSmall"), {
-          series: [{
-            name: 'Stock Price ($)',
-            data: [9.80, 9.60, 9.55, 9.56, 9.63, 9.68, 9.60],
-          }],
-          chart: {
-            height: 150,
-            type: 'area',
-            toolbar: {
-              show: false
-            },
-          },
-          markers: {
-            size: 3
-          },
-          colors: ['#4154f1'],
-          fill: {
-            type: "gradient",
-            gradient: {
-              shadeIntensity: 1,
-              opacityFrom: 0.3,
-              opacityTo: 0.4,
-              stops: [0, 90, 100]
-            }
-          },
-          dataLabels: {
-            enabled: false
-          },
-          stroke: {
-            curve: 'smooth',
-            width: 1
-          },
-          xaxis: {
-            type: 'datetime',
-            categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"],
-            labels: {
-              show: false
-            }
-          },
-          tooltip: {
-            x: {
-              format: 'dd/MM/yy HH:mm'
-            },
-          }
-        }).render();
-      });
-    </script>
-
-
 
   </main><!-- End #main -->
 
@@ -374,17 +303,17 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/chart.js/chart.umd.js"></script>
+  <script src="../static/vendor/echarts/echarts.min.js"></script>
+  <script src="../static/vendor/quill/quill.min.js"></script>
+  <script src="../static/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../static/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../static/js/main.js"></script>
 
 </body>
 

@@ -3,6 +3,7 @@ import os
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import requests
 from datetime import datetime
 
 
@@ -26,6 +27,28 @@ for item in response['items']:
         channel_id=item['snippet']['channelId']
  # for key,value in item.items(): 
  #     print(key,value)'''
+
+request = youtube.channels().list(
+    part='snippet',
+    id=channel_id,
+    maxResults=1
+)
+
+responses = request.execute()
+
+profile_picture_url = responses['items'][0]['snippet']['thumbnails']['default']['url']
+
+# Get image data from URL
+response = requests.get(profile_picture_url)
+image_data = response.content
+
+# Create directory for images if it doesn't exist
+if not os.path.exists('static/img'):
+    os.makedirs('static/img')
+
+# Save image data as PNG file
+with open(f"static/img/{q}.png", 'wb') as f:
+    f.write(image_data)
 
 channel_ids = ['UCG8rbF3g2AMX70yOd8vqIZg', # Logan Paul
                'UCi3OE-aN09WOcN9d2stCvPg', # Charli Damelio
@@ -111,6 +134,9 @@ upload_id = channel_stats[0]['contentDetails']['relatedPlaylists']['uploads']
 video_list = get_video_list(youtube, upload_id)
 video_data = get_video_details(youtube, video_list)
 
+embed_video = video_list[0]
+print(embed_video)
+
 
 df=pd.DataFrame(video_data)
 df['title_length'] = df['title'].str.len()
@@ -157,7 +183,7 @@ plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Numbe
 
 
 # Save the plot as an image
-filename = f"assets/img/{q}_data.png"
+filename = f"static/img/{q}_data.png"
 plt.savefig(filename, dpi=300, bbox_inches='tight')
 
 
