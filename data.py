@@ -8,7 +8,7 @@ from datetime import datetime
 
 def get_subscriber_count(q):
     channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
-    api_key='AIzaSyDsFUscTRRFFEYWALf-p1Nj_VMJOoEO-JQ'
+    api_key='AIzaSyCOooVUvF7tiEAT9yZ5xLjSrKHa0_v9kTg'
     youtube = build('youtube', 'v3', developerKey=api_key)
      
     request = youtube.search().list(
@@ -49,7 +49,7 @@ def get_subscriber_count(q):
 
 def get_url(q):
     channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
-    api_key='AIzaSyDsFUscTRRFFEYWALf-p1Nj_VMJOoEO-JQ'
+    api_key='AIzaSyCOooVUvF7tiEAT9yZ5xLjSrKHa0_v9kTg'
     youtube = build('youtube', 'v3', developerKey=api_key)
      
     request = youtube.search().list(
@@ -163,7 +163,7 @@ def get_url(q):
 
 def getAll(q):
     channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
-    api_key='AIzaSyDsFUscTRRFFEYWALf-p1Nj_VMJOoEO-JQ'
+    api_key='AIzaSyCOooVUvF7tiEAT9yZ5xLjSrKHa0_v9kTg'
     youtube = build('youtube', 'v3', developerKey=api_key)
      
     request = youtube.search().list(

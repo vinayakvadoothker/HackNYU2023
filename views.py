@@ -34,8 +34,9 @@ def template():
             getAll(name)
             twitter_name = name.replace(' ', '')
             ticker = twitter_name[:4]
-
-    return render_template('template.html',name, url, twitter_name, ticker, count)
+            return render_template('template.html',namee, url, twitter_name, ticker, count)
+    else:
+        return ender_template('template.html')
 
 @views.route('/about_us.html')
 def about():
