@@ -6,12 +6,12 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 
 
-channel_id = "UCi3OE-aN09WOcN9d2stCvPg"
-api_key='AIzaSyBxQFIR2uhWf3aYB3xl0ExNJMGR4aGk5l4'
+channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
+api_key='AIzaSyDsFUscTRRFFEYWALf-p1Nj_VMJOoEO-JQ'
 youtube = build('youtube', 'v3', developerKey=api_key)
 q=input('What youtube creator do you want to invest in?')
  
-request = youtube.search().list(
+'''request = youtube.search().list(
      part='id,snippet',
     q=q,
     type='video',
@@ -25,13 +25,14 @@ for item in response['items']:
     if q in item['snippet']['channelTitle']:
         channel_id=item['snippet']['channelId']
  # for key,value in item.items(): 
- #     print(key,value)
+ #     print(key,value)'''
 
 channel_ids = ['UCG8rbF3g2AMX70yOd8vqIZg', # Logan Paul
                'UCi3OE-aN09WOcN9d2stCvPg', # Charli Damelio
                 'UCIwFjwMjI0y7PDBVEO9-bkQ', # Justin Bieber
                'UCX6OQ3DkcsbYNE6H8uQQuVA', # Mr Beast
-               'UCBdw4dLCLLHmTgAOnW4V0hQ'#The Rock 
+               'UCBdw4dLCLLHmTgAOnW4V0hQ'#The Rock
+               'UC-lHJZR3Gqxm24_Vd_AJ5Yw'#PewDiePie
               ]
 
 def get_channel_stats(youtube, channel_id):
@@ -146,17 +147,17 @@ df_sorted['view_count'] = (df_sorted['view_count'] / 10000000)
 
 
 
-plot = sns.lineplot(x='published', y='view_count', data=df_sorted, ci=None)
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
 plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
 #plt.show()
 
 
-plot = sns.lineplot(x='published', y='view_count', data=df_sorted, ci=None)
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
 plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
 
 
 # Save the plot as an image
-filename = "assets/img/charli_data.png"
+filename = "assets/img/pewdiepie_data.png"
 plt.savefig(filename, dpi=300, bbox_inches='tight')
 
 
