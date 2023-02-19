@@ -9,6 +9,23 @@ from datetime import datetime
 channel_id = "UCi3OE-aN09WOcN9d2stCvPg"
 api_key='AIzaSyBxQFIR2uhWf3aYB3xl0ExNJMGR4aGk5l4'
 youtube = build('youtube', 'v3', developerKey=api_key)
+q=input('What youtube creator do you want to invest in?')
+ 
+request = youtube.search().list(
+     part='id,snippet',
+    q=q,
+    type='video',
+   maxResults=50 )
+
+response = request.execute()
+
+#print(response)
+
+for item in response['items']:
+    if q in item['snippet']['channelTitle']:
+        channel_id=item['snippet']['channelId']
+ # for key,value in item.items(): 
+ #     print(key,value)
 
 channel_ids = ['UCG8rbF3g2AMX70yOd8vqIZg', # Logan Paul
                'UCi3OE-aN09WOcN9d2stCvPg', # Charli Damelio
@@ -129,13 +146,14 @@ df_sorted['view_count'] = (df_sorted['view_count'] / 10000000)
 
 
 
-plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, ci=None)
 plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
 #plt.show()
 
 
-plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, ci=None)
 plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
+
 
 # Save the plot as an image
 filename = "assets/img/charli_data.png"
@@ -148,4 +166,6 @@ plt.savefig(filename, dpi=300, bbox_inches='tight')
 
  
 
-#print(plt.plot(df_sorted["published"], df_sorted["view_count"]))
+#print(plt.plot(df_sorted["published"], df_sorted["view_count"]))'''
+
+
