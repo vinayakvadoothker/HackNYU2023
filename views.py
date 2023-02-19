@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request
 from texting import introText
-from data import get_url
+#from data import get_url
 
 views = Blueprint(__name__, 'views')
 
@@ -13,11 +13,10 @@ def login():
 @views.route('/home.html', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        global number
         number = request.form['phone-number']
         introText(number)
         
-    return render_template('home.html', userNum=number)
+    return render_template('home.html')
     
 
 
@@ -31,27 +30,27 @@ def home2():
             ticker = searchInput[:4]
             return render_template('template.html',name = name, url = url, twitter_name = twitter_name, ticker = ticker) 
     else:
-            return render_template('invest.html', userNum=number)
+            return render_template('invest.html')
 
 @views.route('/about_us.html')
 def about():
-    return render_template('about_us.html', userNum=number)
+    return render_template('about_us.html')
 
 @views.route('/charli.html')
 def charli():
-    return render_template('charli.html', userNum=number)
+    return render_template('charli.html')
 
 @views.route('/contact_thank_you.html')
 def thank_you():
-    return render_template('contact_thank_you.html', userNum=number)
+    return render_template('contact_thank_you.html')
 
 @views.route('/contact.html')
 def contact():
-    return render_template('contact.html', userNum=number)
+    return render_template('contact.html')
 
 @views.route('/deposit.html')
 def deposit():
-    return render_template('deposit.html', userNum=number)
+    return render_template('deposit.html')
 
 @views.route('index.html')
 def index():
@@ -59,15 +58,15 @@ def index():
 
 @views.route('/justin_bieber.html')
 def justin():
-    return render_template('justin_bieber.html', userNum=number)
+    return render_template('justin_bieber.html')
 
 @views.route('/logan_paul.html')
 def logan():
-    return render_template('logan_paul.html', userNum=number)
+    return render_template('logan_paul.html')
 
 @views.route('/mr_beast.html')
 def beast():
-    return render_template('mr_beast.html', userNum=number)
+    return render_template('mr_beast.html')
 
 @views.route('/pages-login.html')
 def plogin():
