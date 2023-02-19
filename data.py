@@ -6,23 +6,16 @@ import matplotlib.pyplot as plt
 import requests
 from datetime import datetime
 
-
-def getURL(q):
-    
+def get_subscriber_count(q):
     channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
     api_key='AIzaSyDsFUscTRRFFEYWALf-p1Nj_VMJOoEO-JQ'
     youtube = build('youtube', 'v3', developerKey=api_key)
-
-
-    #im commenting this out
-    #q= input("wjanfkjasdn")
-
-    
+     
     request = youtube.search().list(
-        part='id,snippet',
+         part='id,snippet',
         q=q,
         type='video',
-    maxResults=50 )
+       maxResults=50 )
 
     response = request.execute()
 
@@ -35,44 +28,59 @@ def getURL(q):
             #print(key,value)
 
 
+        
 
     request = youtube.channels().list(
         part='snippet',
         id=channel_id,
         maxResults=1
     )
+
     responses = request.execute()
+
 
     profile_picture_url = responses['items'][0]['snippet']['thumbnails']['default']['url']
 
-    def get_subscriber_count(channel_id):
-        request = youtube.channels().list(part="statistics", id=channel_id)
-        respon = request.execute()
-        subscriber_count = int(respon["items"][0]["statistics"]["subscriberCount"])
-        return subscriber_count/1000000
 
-    print(get_subscriber_count(channel_id))
+    request = youtube.channels().list(part="statistics", id=channel_id)
+    respon = request.execute()
+    subscriber_count = int(respon["items"][0]["statistics"]["subscriberCount"])
+    return subscriber_count/1000000
+
+def get_url(q):
+    channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
+    api_key='AIzaSyDsFUscTRRFFEYWALf-p1Nj_VMJOoEO-JQ'
+    youtube = build('youtube', 'v3', developerKey=api_key)
+     
+    request = youtube.search().list(
+         part='id,snippet',
+        q=q,
+        type='video',
+       maxResults=50 )
+
+    response = request.execute()
+
+    #print(response)
+
+    for item in response['items']:
+        if q in item['snippet']['channelTitle']:
+            channel_id=item['snippet']['channelId']
+        #for key,value in item.items(): 
+            #print(key,value)
 
     # Get image data from URL
-    response = requests.get(profile_picture_url)
-    image_data = response.content
+    #response = requests.get(profile_picture_url)
+    #image_data = response.content
 
     # Create directory for images if it doesn't exist
-    if not os.path.exists('static/img'):
-        os.makedirs('static/img')
+    #if not os.path.exists('static/img'):
+        #os.makedirs('static/img')
 
     # Save image data as PNG file
-    with open("static/img/search.png", 'wb') as f:
-        f.write(image_data)
+    #with open("static/img/search.png", 'wb') as f:
+        #f.write(image_data)
 
-    channel_ids = ['UCG8rbF3g2AMX70yOd8vqIZg', # Logan Paul
-                'UCi3OE-aN09WOcN9d2stCvPg', # Charli Damelio
-                    'UCIwFjwMjI0y7PDBVEO9-bkQ', # Justin Bieber
-                'UCX6OQ3DkcsbYNE6H8uQQuVA', # Mr Beast
-                'UCBdw4dLCLLHmTgAOnW4V0hQ'#The Rock
-                'UC-lHJZR3Gqxm24_Vd_AJ5Yw'#PewDiePie
-                ]
-
+   
     def get_channel_stats(youtube, channel_id):
         request = youtube.channels().list(
             part="snippet,contentDetails,statistics",
@@ -142,33 +150,27 @@ def getURL(q):
                 stats_list.append(stats_dict)
 
         return stats_list
-        
+         
 
     channel_stats = get_channel_stats(youtube, channel_id)
     upload_id = channel_stats[0]['contentDetails']['relatedPlaylists']['uploads']
     video_list = get_video_list(youtube, upload_id)
     video_data = get_video_details(youtube, video_list)
-
-    
+        
     embed_video = video_list[0]
     return embed_video
 
+
 def getAll(q):
-    
     channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
     api_key='AIzaSyDsFUscTRRFFEYWALf-p1Nj_VMJOoEO-JQ'
     youtube = build('youtube', 'v3', developerKey=api_key)
-
-
-    #im commenting this out
-    #q= input("wjanfkjasdn")
-
-    
+     
     request = youtube.search().list(
-        part='id,snippet',
+         part='id,snippet',
         q=q,
         type='video',
-    maxResults=50 )
+       maxResults=50 )
 
     response = request.execute()
 
@@ -181,23 +183,26 @@ def getAll(q):
             #print(key,value)
 
 
+        
 
     request = youtube.channels().list(
         part='snippet',
         id=channel_id,
         maxResults=1
     )
+
     responses = request.execute()
+
 
     profile_picture_url = responses['items'][0]['snippet']['thumbnails']['default']['url']
 
-    def get_subscriber_count(channel_id):
-        request = youtube.channels().list(part="statistics", id=channel_id)
-        respon = request.execute()
-        subscriber_count = int(respon["items"][0]["statistics"]["subscriberCount"])
-        return subscriber_count/1000000
+    #print(response)
 
-    print(get_subscriber_count(channel_id))
+    for item in response['items']:
+        if q in item['snippet']['channelTitle']:
+            channel_id=item['snippet']['channelId']
+        #for key,value in item.items(): 
+            #print(key,value)
 
     # Get image data from URL
     response = requests.get(profile_picture_url)
@@ -212,12 +217,12 @@ def getAll(q):
         f.write(image_data)
 
     channel_ids = ['UCG8rbF3g2AMX70yOd8vqIZg', # Logan Paul
-                'UCi3OE-aN09WOcN9d2stCvPg', # Charli Damelio
+                   'UCi3OE-aN09WOcN9d2stCvPg', # Charli Damelio
                     'UCIwFjwMjI0y7PDBVEO9-bkQ', # Justin Bieber
-                'UCX6OQ3DkcsbYNE6H8uQQuVA', # Mr Beast
-                'UCBdw4dLCLLHmTgAOnW4V0hQ'#The Rock
-                'UC-lHJZR3Gqxm24_Vd_AJ5Yw'#PewDiePie
-                ]
+                   'UCX6OQ3DkcsbYNE6H8uQQuVA', # Mr Beast
+                   'UCBdw4dLCLLHmTgAOnW4V0hQ'#The Rock
+                   'UC-lHJZR3Gqxm24_Vd_AJ5Yw'#PewDiePie
+                  ]
 
     def get_channel_stats(youtube, channel_id):
         request = youtube.channels().list(
@@ -288,18 +293,12 @@ def getAll(q):
                 stats_list.append(stats_dict)
 
         return stats_list
-        
+         
 
     channel_stats = get_channel_stats(youtube, channel_id)
     upload_id = channel_stats[0]['contentDetails']['relatedPlaylists']['uploads']
     video_list = get_video_list(youtube, upload_id)
     video_data = get_video_details(youtube, video_list)
-
-    def get_url():
-        embed_video = video_list[0]
-        return embed_video
-
-
     df=pd.DataFrame(video_data)
     df['title_length'] = df['title'].str.len()
     df["view_count"] = pd.to_numeric(df["view_count"])
@@ -329,7 +328,7 @@ def getAll(q):
 
     df_sorted['published'] = df_sorted['published'].dt.strftime('%m')
 
-    print(df_sorted)
+
 
     df_sorted['view_count'] = (df_sorted['view_count'] / 10000000)
 
@@ -354,10 +353,7 @@ def getAll(q):
 
 
 
-    
 
     #print(plt.plot(df_sorted["published"], df_sorted["view_count"]))
 
-#print(getURL("Jake Paul"))
-getAll("Jake Paul")
 
