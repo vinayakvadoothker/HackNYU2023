@@ -11,7 +11,7 @@ api_key='AIzaSyDsFUscTRRFFEYWALf-p1Nj_VMJOoEO-JQ'
 youtube = build('youtube', 'v3', developerKey=api_key)
 q=input('What youtube creator do you want to invest in?')
  
-'''request = youtube.search().list(
+request = youtube.search().list(
      part='id,snippet',
     q=q,
     type='video',
@@ -157,7 +157,7 @@ plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Numbe
 
 
 # Save the plot as an image
-filename = "assets/img/pewdiepie_data.png"
+filename = f"assets/img/{q}_data.png"
 plt.savefig(filename, dpi=300, bbox_inches='tight')
 
 
