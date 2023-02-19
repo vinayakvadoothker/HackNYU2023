@@ -25,8 +25,8 @@ response = request.execute()
 for item in response['items']:
     if q in item['snippet']['channelTitle']:
         channel_id=item['snippet']['channelId']
-    for key,value in item.items(): 
-        print(key,value)
+    #for key,value in item.items(): 
+        #print(key,value)
 
 
     
@@ -188,12 +188,12 @@ df_sorted['view_count'] = (df_sorted['view_count'] / 10000000)
 
 
 
-plot = sns.lineplot(x='published', y='view_count', data=df_sorted, ci=None)
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
 plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
 #plt.show()
 
 
-plot = sns.lineplot(x='published', y='view_count', data=df_sorted, ci=None)
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
 plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
 
 
