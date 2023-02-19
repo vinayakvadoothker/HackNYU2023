@@ -42,6 +42,14 @@ responses = request.execute()
 
 profile_picture_url = responses['items'][0]['snippet']['thumbnails']['default']['url']
 
+def get_subscriber_count(channel_id):
+    request = youtube.channels().list(part="statistics", id=channel_id)
+    respon = request.execute()
+    subscriber_count = int(respon["items"][0]["statistics"]["subscriberCount"])
+    return subscriber_count/1000000
+
+print(get_subscriber_count(channel_id))
+
 # Get image data from URL
 response = requests.get(profile_picture_url)
 image_data = response.content
@@ -51,7 +59,7 @@ if not os.path.exists('static/img'):
     os.makedirs('static/img')
 
 # Save image data as PNG file
-with open(static/img/search.png", 'wb') as f:
+with open("static/img/search.png", 'wb') as f:
     f.write(image_data)
 
 channel_ids = ['UCG8rbF3g2AMX70yOd8vqIZg', # Logan Paul
@@ -176,21 +184,21 @@ df_sorted['published'] = df_sorted['published'].dt.strftime('%m')
 print(df_sorted)
 
 df_sorted['view_count'] = (df_sorted['view_count'] / 10000000)
-df_sorted[]
 
 
 
-plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
+
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, ci=None)
 plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
 #plt.show()
 
 
-plot = sns.lineplot(x='published', y='view_count', data=df_sorted, errorbar=None)
+plot = sns.lineplot(x='published', y='view_count', data=df_sorted, ci=None)
 plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Number of Views(in 10 Millions)')
 
 
 # Save the plot as an image
-filename = static/img/data_image.png"
+filename = "static/img/data_image.png"
 plt.savefig(filename, dpi=300, bbox_inches='tight')
 
 
@@ -200,6 +208,6 @@ plt.savefig(filename, dpi=300, bbox_inches='tight')
 
  
 
-#print(plt.plot(df_sorted["published"], df_sorted["view_count"]))'''
+#print(plt.plot(df_sorted["published"], df_sorted["view_count"]))
 
 
