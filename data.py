@@ -25,8 +25,11 @@ response = request.execute()
 for item in response['items']:
     if q in item['snippet']['channelTitle']:
         channel_id=item['snippet']['channelId']
- # for key,value in item.items(): 
- #     print(key,value)'''
+    for key,value in item.items(): 
+        print(key,value)
+
+
+    
 
 request = youtube.channels().list(
     part='snippet',
@@ -35,6 +38,7 @@ request = youtube.channels().list(
 )
 
 responses = request.execute()
+
 
 profile_picture_url = responses['items'][0]['snippet']['thumbnails']['default']['url']
 
@@ -47,7 +51,7 @@ if not os.path.exists('static/img'):
     os.makedirs('static/img')
 
 # Save image data as PNG file
-with open(f"static/img/{q}.png", 'wb') as f:
+with open(static/img/search.png", 'wb') as f:
     f.write(image_data)
 
 channel_ids = ['UCG8rbF3g2AMX70yOd8vqIZg', # Logan Paul
@@ -134,8 +138,10 @@ upload_id = channel_stats[0]['contentDetails']['relatedPlaylists']['uploads']
 video_list = get_video_list(youtube, upload_id)
 video_data = get_video_details(youtube, video_list)
 
-embed_video = video_list[0]
-print(embed_video)
+def get_url():
+    
+    embed_video = video_list[0]
+    return embed_video
 
 
 df=pd.DataFrame(video_data)
@@ -167,9 +173,10 @@ df_sorted['published'] = pd.to_datetime(df_sorted['published'])
 
 df_sorted['published'] = df_sorted['published'].dt.strftime('%m')
 
-df_sorted
+print(df_sorted)
 
 df_sorted['view_count'] = (df_sorted['view_count'] / 10000000)
+df_sorted[]
 
 
 
@@ -183,7 +190,7 @@ plot.set(title='Views per month in 2022', xlabel='Months in 2022', ylabel='Numbe
 
 
 # Save the plot as an image
-filename = f"static/img/{q}_data.png"
+filename = static/img/data_image.png"
 plt.savefig(filename, dpi=300, bbox_inches='tight')
 
 
