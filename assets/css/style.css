@@ -1,3 +1,22 @@
+
+.parallax {
+  /* Set the background image */
+  background-image: url("your-image-url.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* Set the height of the section */
+  height: 100vh;
+  /* Create the parallax effect by setting a fixed background position */
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Add some padding to your existing content to make sure it doesn't get hidden by the parallax effect */
+.parallax > * {
+  padding-top: 100vh;
+}
+
 .buy-sell-hold {
   display: flex;
   flex-direction: row;
@@ -140,7 +159,7 @@ h6 {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   border: 0;
-  box-shadow: 0 5px 30px 0 rgba(63, 89, 105, 0.2);
+  box-shadow: 0 5px 30px 0 rgba(63, 105, 71, 0.2);
 }
 
 .dropdown-menu .dropdown-header,
