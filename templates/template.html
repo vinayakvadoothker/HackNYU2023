@@ -261,102 +261,41 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Mr. Beast</h1>
+      <h1>{{name}}</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="invest.html">Invest</a></li>
-          <li class="breadcrumb-item active">Mr. Beast</li>
+          <li class="breadcrumb-item active">{{name}}</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
     <section class="section">
       <div class="row">
         <div class="col-md-6">
-          <a href="mr_beast.html"><img src="../static/img/beast2.png" alt="" width="400"></a>
+          <a href="template.html"><img src="../static/img/search.png" alt="" width="400"></a>
           <br><br>
-          <div style="position: relative;">
-            <img src="../static/img/beast_data.png" alt="" style="max-width: 100%; margin-bottom: 20px;">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/TJ2ifmkGGus" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
+          <img src="../static/img/data_image.png" alt="" style="max-width: 100%; margin-bottom: 20px;">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{url}}" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h5 class="card-title" style="font-size: 24px;">{{ticker}} <span style="font-size: 24px;">| $10.00</span></h5>
-              <div class="input-group mb-3">
-                <span class="input-group-text">$</span>
-                <input type="number" class="form-control" id="stock-price" step="0.01" name="stock_price">
-                <button class="btn btn-primary" id="submit-trade" type="button">Submit Trade</button>
-              </div>
-              <h5 class="card-title" style="font-size: 16px;">Stock Price ($) <span style="font-size: 24px;"></span>
-              </h5>
-              <div id="reportsChartSmall"></div>
-              <div class="buy-sell-hold" style="margin-top: 20px;">
-                <div class="buy-bar" style="width: 60%;">Buy (60%)</div>
-                <div class="hold-bar" style="width: 20%;">Hold (20%)</div>
-                <div class="sell-bar" style="width: 20%;">Sell (20%)</div>
-              </div>
-              <br>
-              <a class="twitter-timeline" data-theme="light" data-tweet-limit="3"
-                href="https://twitter.com/MrBeast?ref_src=twsrc%5Etfw">Tweets by MrBeast</a>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title" style="font-size: 24px;">{{ticker}} <span style="font-size: 24px;">| $10.00</span></h5>
+            <div class="input-group mb-3">
+              <span class="input-group-text">$</span>
+              <input type="number" class="form-control" id="stock-price" step="0.01" name="stock_price">
+              <button class="btn btn-primary" id="submit-trade" type="button">Submit Trade</button>
             </div>
+            <img src="../static/img/data_image.png" alt="" style="max-width: 100%; margin-top: 20px;">
+            <br>
+            <a class="twitter-timeline" data-theme="light" data-tweet-limit="3"
+              href="https://twitter.com/{{twitter_name}}">Tweets by {{name}}</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
-    </section>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        new ApexCharts(document.querySelector("#reportsChartSmall"), {
-          series: [{
-            name: 'Stock Price ($)',
-            data: [9.84, 9.89, 9.67, 9.99, 10.02, 10.04, 10.00],
-          }],
-          chart: {
-            height: 150,
-            type: 'area',
-            toolbar: {
-              show: false
-            },
-          },
-          markers: {
-            size: 3
-          },
-          colors: ['#4154f1'],
-          fill: {
-            type: "gradient",
-            gradient: {
-              shadeIntensity: 1,
-              opacityFrom: 0.3,
-              opacityTo: 0.4,
-              stops: [0, 90, 100]
-            }
-          },
-          dataLabels: {
-            enabled: false
-          },
-          stroke: {
-            curve: 'smooth',
-            width: 1
-          },
-          xaxis: {
-            type: 'datetime',
-            categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"],
-            labels: {
-              show: false
-            }
-          },
-          tooltip: {
-            x: {
-              format: 'dd/MM/yy HH:mm'
-            },
-          }
-        }).render();
-      });
-    </script>
-
-
+      </div>
+    </section> 
 
   </main><!-- End #main -->
 
