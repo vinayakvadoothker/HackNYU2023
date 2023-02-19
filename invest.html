@@ -279,8 +279,8 @@
             <!-- General Form Elements -->
             <form>
               <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Search</label>
+                <input type="search" class="form-control" id="searchInput" placeholder="Enter a search term">
+                <label for="searchInput">Search</label>
               </div>
             
               <div class="row mb-3">
@@ -298,10 +298,27 @@
             
               <div class="row mb-3">
                 <div class="col-sm-10">
-                  <button type="submit" class="btn btn-primary" onclick="redirect(); return false;">Search</button>
+                  <button type="submit" class="btn btn-primary" onclick="search(); return false;">Search</button>
                 </div>
               </div>
             </form>
+            
+            <script>
+              function search() {
+                const searchInput = document.getElementById('searchInput').value.trim();
+                const creatorList = document.getElementById('creatorList');
+                const selectedCreator = creatorList.options[creatorList.selectedIndex].value;
+            
+                if (searchInput === '' && selectedCreator !== 'Choose a Creator') {
+                  window.location.href = selectedCreator;
+                } else if (searchInput !== '') {
+                  // Redirect to search results page based on searchInput
+                  window.location.href = 'search.html?q=' + encodeURIComponent(searchInput);
+                } else {
+                  // Do nothing if both search input and dropdown selection are empty
+                }
+              }
+            </script>
             
             <script>
             function redirect() {
