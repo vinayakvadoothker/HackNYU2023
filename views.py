@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request
 from texting import introText
-from data import getAll, getURL
+from data import getAll, get_url, get_subscriber_count
 
 views = Blueprint(__name__, 'views')
 
@@ -29,12 +29,13 @@ def template():
     if request.method == 'POST':
             name = request.form['searchInput']
             #url = get_url(searchInput)
-            url = getURL(name)
+            url = get_url(name)
+            count = get_subscriber_count(name)
             getAll(name)
             twitter_name = name.replace(' ', '')
             ticker = twitter_name[:4]
 
-    return render_template('template.html',name, url, twitter_name, ticker)
+    return render_template('template.html',name, url, twitter_name, ticker, count)
 
 @views.route('/about_us.html')
 def about():
