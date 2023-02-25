@@ -2,47 +2,35 @@
 
 
 ## Inspiration
-Our inspiration for tackling the issue of deforestation stems from a deep concern for the environment and a desire to make a positive impact. We saw a need for a tool that could bring the impact of deforestation to life, and make it tangible for people everywhere. The problem of deforestation is a global issue and affects everyone, and we believe that it is important for people to understand its consequences and take action to address it. That's why we decided to build a data visualization tool that would allow users to see the impact of deforestation in their own communities. This was designed to be an immersive and educational experience, one that would inspire people to understand the issue. We believe that this project has the potential to make a real difference in the fight against deforestation. By raising awareness and inspiring people to take action, we hope to contribute to a more sustainable future for our planet.
+Our inspiration for this project comes from our belief that content creators are essential to the entertainment industry, and that they are sources of high potential for investment, who often struggle to secure the capital they need to produce high-quality content. We recognize that investors are looking for new and innovative ways to make returns on their money, and we see an opportunity to connect these two groups through an investment platform that allows content creators to access the capital they need, while providing investors with the opportunity to earn a return on their investment. We are passionate about supporting the creative industry and helping content creators to build sustainable and profitable careers, and we believe that our investment platform can be a powerful tool for achieving these goals.
 
-##Project Overview
-We built a data visualization tool that shows deforestation at a current location inputted by the user based on data from 2007-2017, due to the current live satellite feed being inaccessible to analyze. Users are next prompted to take part in a simulation that shows them both what the location was like a decade ago and the present day which represents how deforestation will affect us in the future if we don't take any action.
-
-## How It Works
-**1. Users enter location coordinates through our web page, which are then utilized by the Google Earth Engine API. The API gathers data using the given parameters in order to plot the information on a Folium layer and utilizes Selenium to save the images. The saved images are analyzed using OpenCV to detect deforestation by examining the color and location of pixels. Finally, the program returns detailed images displaying the deforestation that has occurred in the specified area over the past decade.**
-
-![Deforestation Detection Image](https://gateway.estuary.tech/gw/ipfs/bafkreicfdr5xod7toa4wwx5wyiuev6vzyed7c5v4fkzsw427sh2oeb7ofu)
-
-**2. We utilized Unity3D and Niantic Lightship VPS Waypoint assets to model a scaled representation of Stevenson College at UCSC. This 3D interactive environment allows users to visualize and experience the potential consequences of deforestation in a vivid and educational manner.**
-
-![UCSC Simulation Image](https://gateway.estuary.tech/gw/ipfs/bafkreia2zsbxrqkcvwo2g6zea2gjouppclvjcbzc2alfa6pyf3yxtwuzqu)
-
-![Deforestation Simulation Image](https://gateway.estuary.tech/gw/ipfs/bafkreigfjfrsb3v4ymkp3o44scg7dhrkcahmugwes7bmje2t7t5vi6khxy)
-
-**3. Users receive notifications with updates and resources obtained based on their selections. Images and files are uploaded to Estuary, which uses an Interplanetary File System(IPFS) allowing us to upload files to Filecoin and retrieve them. Doing this is beneficial as all images are open-sourced meaning users can audit that the information is raw and not edited or manipulated.**
-
-![Twilio Image](https://gateway.estuary.tech/gw/ipfs/bafkreifpolkjzfc7g7vdd6pipnqsmpkkeulr4nnol6u7uufk7mvy7w5mpi)
+## What it does
+Our project is an investment platform that allows individuals to invest in their favorite content creators by owning a portion of their brand/platform. Our platform creates a unique opportunity for investors to support the creative industry while also making a profitable investment. By providing content creators with a sustainable source of funding, our platform helps support the future of content creation and allows creators to focus on producing the best content possible. Additionally, our platform provides a new way for investors to diversify their portfolios and invest in a new industry. 
 
 ## How we built it
-![System Architecture](https://gateway.estuary.tech/gw/ipfs/bafkreibnptrlvnpasaybs4cx2nsj5kkqcyyqcqsj32ypvswb72hagwc2ti)
+1.) Our investment platform was built using a combination of programming languages and tools. First, we designed the platform's user interface using web development tools such as HTML, CSS, and JavaScript, which provide a sleek, responsive, and intuitive interface. For the main functionality of our platform, we used the Python programming language, in combination with the pandas and seaborn libraries; these helped us create the data visualizations that are presented on our webpage. 
 
+![System Architecture](https://gateway.estuary.tech/gw/ipfs/bafkreiaa6gt3rr4eynjwl53onqycbltulhf46r4nfhen5swezwtmaunt7m)
 
+2.) For our backend we used Flask to handle routing and send data needed for data visualizations, youtube API, channel information, etc. 
+
+3. We update the user on their investments and user activity through Twilio API
 
 ## Challenges we ran into
-1. Discrepancies between the versions of our dependencies 
-2. Integrating our front end with our back end--running our project on a server 
-3. Loading different environments in our AR/VR simulation
+1.) Trouble performing certain data visualization tasks
+2.) Integrating our front end with our back end--running our project on a server
 
 ## Accomplishments that we're proud of
-We are proud that we were able to execute our project idea and build out a viable solution to raising awareness and combating a pressing issue.
+We are proud that we were able to execute our content creator investment idea and create a unique opportunity for investors to diversify their portfolios and invest in the content creation industry, which has traditionally been difficult for investors to access.
 
 ## What we learned
-1. Flask
-2. Lightship
-3. Folium 
-4. Selenium
-5. Google Earth Engine
+1.) Flask
+2.) NumPy
+3.) Pandas
+4.) Seaborn
 
-## What's next for GLYTH
-We plan on cleaning up the current components of our project and adding some more functionality. To better utilize Lightship VPS we plan to add our own locations for testing. We tried experimenting with creating our own, but given the timeframe of the hackathon, it made sense to leave this for future improvements. We also plan to create a more dynamic front end that can better integrate with other components of our project: more form data, using users' location, getting feedback from the user, improving the leaderboard, etc.
+## What's next for Creator Capital
+Moving forward, we have several plans for our investment platform for content creators. We plan on developing more advanced tools for content creators, such as analytics dashboards and content management systems, to help them better manage and grow their platforms. We also want to partner with other platforms and services in the content creation industry to provide a more seamless and integrated experience for our users. We plan to expand our reach by expanding to new content creators and investors and building a stronger presence in the content creation industry.
+
 
 
