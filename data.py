@@ -10,7 +10,7 @@ matplotlib.use('Agg')
 
 def get_subscriber_count(q):
     channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
-    api_key='AIzaSyAt84RCzikrWw8SzX8YYi9qRd_AcjRA0SE'
+    api_key='AIzaSyBX4urUN0p9vD5gZmg4PG2HjVXyyv8X84w'
     youtube = build('youtube', 'v3', developerKey=api_key)
      
     request = youtube.search().list(
@@ -51,7 +51,7 @@ def get_subscriber_count(q):
 
 def get_url(q):
     channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
-    api_key='AIzaSyAt84RCzikrWw8SzX8YYi9qRd_AcjRA0SE'
+    api_key='AIzaSyBX4urUN0p9vD5gZmg4PG2HjVXyyv8X84w'
     youtube = build('youtube', 'v3', developerKey=api_key)
      
     request = youtube.search().list(
@@ -165,7 +165,7 @@ def get_url(q):
 
 def getAll(q):
     channel_id = "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
-    api_key='AIzaSyAt84RCzikrWw8SzX8YYi9qRd_AcjRA0SE'
+    api_key='AIzaSyBX4urUN0p9vD5gZmg4PG2HjVXyyv8X84w'
     youtube = build('youtube', 'v3', developerKey=api_key)
      
     request = youtube.search().list(
